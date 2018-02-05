@@ -20,15 +20,13 @@ import com.tlv.service.impl.TlvProcessorServiceImpl;
 @ContextConfiguration(locations = "classpath:application-context.xml")
 public class TlvProcessorServiceTest {
 
-	@Autowired
-	private ApplicationContext applicationContext;
-
+        @Autowired
 	private TlvProcessorService tlvProcessorService;
+
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
 	public void load() {
-		tlvProcessorService = applicationContext.getBean(TlvProcessorServiceImpl.class);
 		System.setOut(new PrintStream(outContent));
 	}
 
